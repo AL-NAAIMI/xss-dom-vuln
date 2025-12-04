@@ -1,28 +1,36 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <h2>DOM-Based XSS Demo</h2>
+
+    <input v-model="userInput" placeholder="Type something" />
+
+    <button @click="inject">Inject into page</button>
+
+    <h3>Output Area (VULNERABLE)</h3>
+    <div ref="outputBox" class="box"></div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
+  data() {
+    return {
+      userInput: ""
+    }
+  },
+  methods: {
+    inject() {
+      this.$refs.outputBox.innerHTML = this.userInput
+    }
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+.box {
+  border: 1px solid #444;
+  padding: 15px;
+  margin-top: 10px;
+  min-height: 40px;
 }
 </style>
